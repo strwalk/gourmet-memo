@@ -1,10 +1,8 @@
 {% extends './base.html' %} {% load static %} {% block titleBlock %} グルメモ |
-作成 {% endblock %} {% block styleBlock %}
-<link rel="stylesheet" href="{% static '/styles/create.css' %}" />
-{% endblock %} {% block bodyBlock %}
+作成 {% endblock %} {% block styleBlock %} {% endblock %} {% block bodyBlock %}
 <h1>新しいグルメモを作成する</h1>
 <section class="mainSection">
-  <section class="createSection">
+  <section class="mainSectionArea">
     <form action="" method="POST">
       {% csrf_token %}
       <section class="formSection">

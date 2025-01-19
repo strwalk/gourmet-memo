@@ -29,11 +29,13 @@ body {
 .submitButton {
   background: #fcbe61;
   width: 10rem;
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2rem;
   text-align: center;
   border-radius: 5rem;
-  outline: none;
+  border: none;
   cursor: pointer;
+  font-size: 16px;
+  box-shadow: 1px 1px 3px silver;
 }
 
 .button:hover,
@@ -67,4 +69,26 @@ body {
 .submitButtonSection {
   display: flex;
   justify-content: end;
+}
+
+.mainSection {
+  display: flex;
+  justify-content: center;
+}
+
+.mainSectionArea {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 4rem;
+  padding: 5rem 3rem;
+  background: white;
+  border-radius: 3rem;
+  box-shadow: 1px 1px 3px silver;
+  width: 40rem;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
