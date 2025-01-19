@@ -1,0 +1,30 @@
+<h1>グルメモ</h1>
+<a href="{% url 'create' %}">レビュー作成</a>
+{% if gourmet_list %}
+<table>
+  <thead>
+    <tr>
+      <th>店名</th>
+      <th>メモ</th>
+      <th>評価</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for gourmet in gourmet_list %}
+    <tr>
+      <td>{{gourmet.restaurant_name}}</td>
+      <td>{{gourmet.memo}}</td>
+      <td>{{gourmet.rating}}</td>
+      <td>
+        <a href="{% url 'update' gourmet.pk %}">編集</a>
+      </td>
+      <td>
+        <a href="{% url 'delete' gourmet.pk %}">削除</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}

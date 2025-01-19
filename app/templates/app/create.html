@@ -1,0 +1,11 @@
+<h1>登録画面</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  <label for="restaurant_name">店名</label>
+  <input type="text" id="restaurant_name" name="restaurant_name" />
+  <label for="rating">評価</label>
+  <input type="number" id="rating" name="rating" />
+  <label for="memo"></label>
+  <textarea id="memo" name="memo" rows="5"></textarea>
+  <input type="submit" value="登録する" />
+</form>
