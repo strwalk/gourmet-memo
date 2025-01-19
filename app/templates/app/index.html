@@ -1,30 +1,50 @@
+{% extends './base.html' %} {% load static %} {% block titleBlock %} グルメモ |
+TOP {% endblock %} {% block styleBlock %}
+<link rel="stylesheet" href="{% static '/styles/index.css' %}" />
+{% endblock %} {% block bodyBlock %}
 <h1>グルメモ</h1>
-<a href="{% url 'create' %}">レビュー作成</a>
+<section class="createButtonSection">
+  <a href="{% url 'create' %}" class="button">グルメモ作成</a>
+</section>
 {% if gourmet_list %}
-<table>
-  <thead>
-    <tr>
-      <th>店名</th>
-      <th>メモ</th>
-      <th>評価</th>
-      <th>編集</th>
-      <th>削除</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for gourmet in gourmet_list %}
-    <tr>
-      <td>{{gourmet.restaurant_name}}</td>
-      <td>{{gourmet.memo}}</td>
-      <td>{{gourmet.rating}}</td>
-      <td>
-        <a href="{% url 'update' gourmet.pk %}">編集</a>
-      </td>
-      <td>
-        <a href="{% url 'delete' gourmet.pk %}">削除</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-{% endif %}
+<section class="gourmetTableSection">
+  <table class="gourmetTable">
+    <thead>
+      <tr>
+        <th class="gourmetTableTh">店名</th>
+        <th class="gourmetTableTh">メモ</th>
+        <th class="gourmetTableTh">評価</th>
+        <th class="gourmetTableTh">編集</th>
+        <th class="gourmetTableTh">削除</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for gourmet in gourmet_list %}
+      <tr>
+        <td class="gourmetTableTd">{{gourmet.restaurant_name}}</td>
+        <td class="gourmetTableTd">
+          {% with ''|center:5 as range %} {% for _ in range %}
+          <!--  -->
+          {% if forloop.counter <= gourmet.rating %}
+          <img src="{% static '/images/star.svg' %}" class="icon" />
+          {% else %}
+          <img src="{% static '/images/noStar.svg' %}" class="icon" />
+          {% endif %} {% endfor %} {% endwith %}
+        </td>
+        <td class="gourmetTableTd">{{gourmet.memo}}</td>
+        <td class="gourmetTableTd">
+          <a href="{% url 'update' gourmet.pk %}">
+            <img src="{% static './images/edit.svg' %}" class="icon" />
+          </a>
+        </td>
+        <td class="gourmetTableTd">
+          <a href="{% url 'delete' gourmet.pk %}">
+            <img src="{% static './images/delete.svg' %}" class="icon" />
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endif %} {% endblock %}

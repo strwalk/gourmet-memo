@@ -1,0 +1,35 @@
+.createButtonSection {
+  display: flex;
+  justify-content: end;
+  margin: 0 5rem;
+}
+
+.gourmetTableSection {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 5rem;
+}
+
+.gourmetTable {
+  width: 100%;
+  background: white;
+  border: 1px solid #5f3700;
+  border-collapse: collapse;
+}
+
+.gourmetTableTh {
+  text-align: left;
+  background: #5f3700;
+  color: white;
+}
+
+.gourmetTableTh,
+.gourmetTableTd {
+  border-bottom: 0.8px solid #5f3700;
+  padding: 0.8rem 1rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
