@@ -1,11 +1,35 @@
-<h1>削除</h1>
-<p>下記のレビューを削除しますか</p>
-<ul>
-  <li>{{gourmet.restaurant_name}}</li>
-  <li>{{gourmet.rating}}</li>
-  <li>{{gourmet.memo}}</li>
-</ul>
-<form action="" method="POST">
-  {% csrf_token %}
-  <input type="submit" value="削除する" />
-</form>
+{% extends './base.html' %} {% load static %} {% block titleBlock %} グルメモ |
+削除 {% endblock %} {% block styleBlock %}
+<link rel="stylesheet" href="{% static '/styles/delete.css' %}" />
+{% endblock %} {% block bodyBlock %}
+<h1>グルメモを削除する</h1>
+<section class="mainSection">
+  <section class="mainSectionArea deleteSectionArea">
+    <section class="deleteUnorderedListSection">
+      <ul class="deleteUnorderedList">
+        <li class="deleteList">
+          <div class="deleteListLabel">・ 店名：</div>
+          <div>{{gourmet.restaurant_name}}</div>
+        </li>
+        <li class="deleteList">
+          <div class="deleteListLabel">・ 評価：</div>
+          <div>{{gourmet.rating}}</div>
+        </li>
+        <li class="deleteList">
+          <div class="deleteListLabel">・ メモ：</div>
+          <div>{{gourmet.memo}}</div>
+        </li>
+      </ul>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <section class="deleteButtonSection">
+          <input type="submit" value="削除する" class="submitButton" />
+        </section>
+      </form>
+    </section>
+  </section>
+</section>
+<section class="backButtonSection">
+  <a href="{% url 'list' %}" class="button">一覧画面に戻る</a>
+</section>
+{% endblock %}

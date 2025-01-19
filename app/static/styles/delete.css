@@ -1,0 +1,32 @@
+.deleteSectionArea {
+  padding: 3rem 5rem;
+}
+
+.deleteUnorderedListSection {
+  width: 100%;
+}
+
+.deleteUnorderedList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 20px;
+  padding: 0;
+}
+
+.deleteList {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.deleteListLabel {
+  width: 5.5rem;
+  flex-shrink: 0;
+}
+
+.deleteButtonSection {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 0;
+}
