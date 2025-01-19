@@ -26,7 +26,45 @@ body {
   box-shadow: 1px 1px 3px silver;
 }
 
-.button:hover {
+.submitButton {
+  background: #fcbe61;
+  width: 10rem;
+  padding: 0.8rem 2rem;
+  text-align: center;
+  border-radius: 5rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.button:hover,
+.submitButton:hover {
   background: #e4b88a;
   color: #5f3700;
+}
+
+.textBox {
+  padding: 0.6rem 1rem;
+  font-size: 20px;
+  width: 30rem;
+  border: 1px solid #5f3700;
+}
+
+.textArea {
+  padding: 0.6rem 1rem;
+  font-size: 20px;
+  width: 30rem;
+}
+
+.formLabel {
+  display: block;
+}
+
+.backButtonSection {
+  display: flex;
+  justify-content: center;
+}
+
+.submitButtonSection {
+  display: flex;
+  justify-content: end;
 }
