@@ -1,16 +1,45 @@
-<h1>登録画面</h1>
-<form action="" method="POST">
-  {% csrf_token %}
-  <label for="restaurant_name">店名</label>
-  <input
-    type="text"
-    id="restaurant_name"
-    name="restaurant_name"
-    value="{{gourmet.restaurant_name}}"
-  />
-  <label for="rating">評価</label>
-  <input type="number" id="rating" name="rating" value="{{gourmet.rating}}" />
-  <label for="memo"></label>
-  <textarea id="memo" name="memo" rows="5">{{gourmet.memo}}</textarea>
-  <input type="submit" value="更新する" />
-</form>
+{% extends './base.html' %} {% load static %} {% block titleBlock %} グルメモ |
+編集 {% endblock %} {% block styleBlock %} {% endblock %} {% block bodyBlock %}
+<h1>グルメモを編集する</h1>
+<section class="mainSection">
+  <section class="mainSectionArea">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <section class="formSection">
+        <section>
+          <label for="restaurant_name" class="formLabel">店名</label>
+          <input
+            type="text"
+            id="restaurant_name"
+            name="restaurant_name"
+            value="{{gourmet.restaurant_name}}"
+            class="textBox"
+          />
+        </section>
+        <section>
+          <label for="rating" class="formLabel">評価</label>
+          <input
+            type="number"
+            id="rating"
+            name="rating"
+            value="{{gourmet.rating}}"
+            class="textBox"
+          />
+        </section>
+        <section>
+          <label for="memo" class="formLabel">メモ</label>
+          <textarea id="memo" name="memo" rows="5" cols="40" class="textArea">
+{{gourmet.memo}}</textarea
+          >
+        </section>
+        <section class="submitButtonSection">
+          <input type="submit" value="更新する" class="submitButton" />
+        </section>
+      </section>
+    </form>
+  </section>
+</section>
+<section class="backButtonSection">
+  <a href="{% url 'list' %}" class="button">一覧画面に戻る</a>
+</section>
+{% endblock %}
