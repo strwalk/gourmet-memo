@@ -12,8 +12,8 @@ TOP {% endblock %} {% block styleBlock %}
     <thead>
       <tr>
         <th class="gourmetTableTh">店名</th>
-        <th class="gourmetTableTh">メモ</th>
         <th class="gourmetTableTh">評価</th>
+        <th class="gourmetTableTh">メモ</th>
         <th class="gourmetTableTh">編集</th>
         <th class="gourmetTableTh">削除</th>
       </tr>
@@ -46,5 +46,8 @@ TOP {% endblock %} {% block styleBlock %}
       {% endfor %}
     </tbody>
   </table>
+</section>
+<section class="logoutButtonSection">
+  <a href="{% url 'logout' %}" class="logoutButton">ログアウト</a>
 </section>
 {% endif %} {% endblock %}

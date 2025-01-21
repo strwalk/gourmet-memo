@@ -1,0 +1,36 @@
+{% extends './base.html' %} {% load static %} {% block titleBlock %} グルメモ |
+ログイン {% endblock %}{% block bodyBlock %}
+<h1>ログイン画面</h1>
+<section class="mainSection">
+  <section class="mainSectionArea">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <section class="formSection">
+        <section>
+          <label for="username" class="formLabel">ユーザー名</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            maxlength="150"
+            class="textBox"
+            required
+          />
+        </section>
+        <section>
+          <label for="password" class="formLabel">パスワード</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="textBox"
+          />
+        </section>
+        <section class="submitButtonSection">
+          <input type="submit" value="ログインする" class="submitButton" />
+        </section>
+      </section>
+    </form>
+  </section>
+</section>
+{% endblock %}
